@@ -1,0 +1,31 @@
+--Create a clothing store database
+
+CREATE TABLE store_inventory (id INTEGER PRIMARY KEY, name TEXT, size TEXT, color TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store_inventory VALUES (1, "Summer Top", 'M', 'White', 20.00, 10);
+INSERT INTO store_inventory VALUES (2, 'Jeans', 'M', 'Blue', 25.00, 30);
+INSERT INTO store_inventory VALUES (3, "Jeans", 'L', 'Black', 30.00, 50);
+INSERT INTO store_inventory VALUES (4, "T Shirt", 'S, M, L', 'Red', 5.00, 10);
+INSERT INTO store_inventory VALUES (5, 'Capri Pants', 'M, L', 'Blue', 30.00, 5);
+INSERT INTO store_inventory VALUES (6, 'Short Sleeve Top', 'S', 'Purple', 20.00, 8);
+INSERT INTO store_inventory VALUES (7, 'Tank Top', 'S, L, XL', 'Orange', 25.00, 25);
+INSERT INTO store_inventory VALUES (8, 'Dress', 'S, M', 'White', 40.00, 10);
+INSERT INTO store_inventory VALUES (9, 'Shoes', 'S', 'Black', 50.00, 30);
+INSERT INTO store_inventory VALUES (10, 'Hat', 'L', 'Purple', 10.00, 8);
+INSERT INTO store_inventory VALUES (11, 'Sweatshirt', 'S, XL', 'Pink', 10.00, 20);
+INSERT INTO store_inventory VALUES (12, 'Sweatpants', 'S', 'Gray', 10.00, 30);
+INSERT INTO store_inventory VALUES (13, 'Long Sleeve Top', 'XL', 'Purple', 20.00, 30);
+INSERT INTO store_inventory VALUES (14, 'Socks', 'L', 'White', 5.00, 20);
+INSERT INTO store_inventory VALUES (15, 'Jacket', 'S', 'Gray', 30.00, 10);
+
+--Display the database ordered by price
+SELECT * FROM store_inventory
+ORDER BY price;
+
+--What is the total amount of all items in stock? 
+SELECT SUM(quantity) FROM store_inventory;
+
+--What are the top 10 items with the lowest inventory?
+SELECT * FROM store_inventory
+ORDER BY price DESC 
+LIMIT 10; 
